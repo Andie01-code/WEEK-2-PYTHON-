@@ -1,0 +1,29 @@
+✅ File Read & Write Challenge + Error Handling Lab
+
+python
+def modify_content(content):
+    # Simple example: convert content to uppercase
+    return content.upper()
+
+def read_and_write_file():
+    filename = input("Enter the filename to read: ")
+
+    try:
+        with open(filename, "r") as file:
+            content = file.read()
+            print("Original Content:\n", content)
+
+        modified_content = modify_content(content)
+
+        new_filename = "modified_" + filename
+        with open(new_filename, "w") as new_file:
+            new_file.write(modified_content)
+            print(f"\nModified content written to {new_filename}")
+
+    except FileNotFoundError:
+        print("🚫 Error: File not found.")
+    except IOError:
+        print("🚫 Error: Could not read/write file.")
+
+Run the function
+read_and_write_file(
