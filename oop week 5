@@ -1,0 +1,75 @@
+Assignment 1: Design Your Own Class - Smartphone Example
+
+python
+Base class
+class Smartphone:
+    def _init_(self, brand, model, storage):
+        self.brand = brand
+        self.model = model
+        self.storage = storage
+
+    def call(self, number):
+        print(f"Calling {number} from {self.model}...")
+
+    def info(self):
+        print(f"{self.brand} {self.model} with {self.storage}GB storage")
+
+
+Inherited class
+class Smartwatch(Smartphone):
+    def _init_(self, brand, model, storage, strap_type):
+        super()._init_(brand, model, storage)
+        self.strap_type = strap_type
+
+    def info(self):
+        print(f"{self.brand} {self.model} Smartwatch with {self.strap_type} strap and {self.storage}GB")
+
+    def track_health(self):
+        print(f"{self.model} is tracking health metrics...")
+
+Creating objects
+phone = Smartphone("Samsung", "Galaxy S23", 128)
+watch = Smartwatch("Apple", "Watch Series 8", 32, "Silicone")
+
+phone.info()
+phone.call("0712345678")
+
+watch.info()
+watch.track_health()
+
+
+ Activity 2: Polymorphism Challenge - Vehicle Example
+
+```python
+class Vehicle:
+    def move(self):
+        print("This vehicle is moving...")
+
+class Car(Vehicle):def move(self):
+        print("🚗 Driving on the road...")
+
+class Plane(Vehicle):
+    def move(self):
+        print("✈ Flying in the sky...")
+
+class Boat(Vehicle):
+    def move(self):
+        print("🚤 Sailing on the water...")
+
+Using polymorphism
+def travel(vehicle):
+    vehicle.move()
+
+Create different vehicles
+my_car = Car()
+my_plane = Plane()
+my_boat = Boat()
+
+Call the same method on each
+travel(my_car)
+travel(my_plane)
+travel(my_boat)
+```
+
+---
+
